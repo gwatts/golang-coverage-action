@@ -73,7 +73,7 @@ async function setCoverageNote(data) {
     ['notes', `--ref=${notesRef}`, 'add', '-f', '--file=-', ctx.sha],
     jsdata
   );
-  await exec('git', ['push', 'origin', `refs/notes/${notesRef}`]);
+  await exec('git', ['push', '-f', 'origin', `refs/notes/${notesRef}`]);
 }
 
 async function getPriorCoverage() {
